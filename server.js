@@ -5,6 +5,12 @@ const express = require('express');
 const app = express ();
 const mongoose = require('mongoose');
 
+//Middleware
+//Body parser
+
+app.use(express.urlencoded({ extended: true}));
+
+
 //Database Connection
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
@@ -26,10 +32,10 @@ app.get('/', (req, res) => {
     });
 
 
-// INDEX ROUTE
+// CREATE ROUTE
 
 app.post('/vapes', (req, res) => {
-    res.send('This is the vape page!');
+    res.send(req.body);
 });
 
 
