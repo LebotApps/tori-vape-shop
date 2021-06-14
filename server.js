@@ -20,12 +20,17 @@ db.on('error', (err)=> console.log(err.message + ' is mongo not running?'));
 db.on('connected', ()=> console.log('mongo connected'));
 db.on('disconnected', ()=> console.log('mongo disconnected'));
 
-//INDEX ROUTE
+//ROOT ROUTE
 app.get('/', (req, res) => {
         res.send("it's working");
     });
 
 
+// INDEX ROUTE
+
+app.post('/vapes', (req, res) => {
+    res.send('This is the vape page!');
+});
 
 
 //Tell Express To Listen
