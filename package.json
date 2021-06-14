@@ -1,0 +1,20 @@
+{
+  "name": "tori-vape-shop-1",
+  "version": "1.0.0",
+  "description": "Project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LebotApps/tori-vape-shop.git"
+  },
+  "author": "Tori Hamm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LebotApps/tori-vape-shop/issues"
+  },
+  "homepage": "https://github.com/LebotApps/tori-vape-shop#readme"
+}

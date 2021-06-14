@@ -20,6 +20,13 @@ db.on('error', (err)=> console.log(err.message + ' is mongo not running?'));
 db.on('connected', ()=> console.log('mongo connected'));
 db.on('disconnected', ()=> console.log('mongo disconnected'));
 
+//INDEX ROUTE
+app.get('/', (req, res) => {
+        res.send("it's working");
+    });
+
+
+
 
 //Tell Express To Listen
 app.listen(process.env.PORT, () => console.log(`express is listening on port ${process.env.PORT}`));
