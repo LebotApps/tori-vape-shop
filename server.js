@@ -53,5 +53,13 @@ app.post('/vapes', (req, res) => {
     })
 });
 
+// SHOW ROUTE 
+
+app.get("/vapes/:id", (req, res)=> {
+    Vape.findById(req.params.id, (error, foundVape)=>{
+        res.send(foundVape);
+    });
+});
+
 //Tell Express To Listen
 app.listen(process.env.PORT, () => console.log(`express is listening on port ${process.env.PORT}`));
