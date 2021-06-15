@@ -53,6 +53,18 @@ app.delete('/vapes/:id', (req, res) =>{
     });
 });
 
+//UPDATE ROUTE
+
+app.put('/vapes/:id', (req, res) => {
+    Vape.findByIdAndUpdate( req.params.id, 
+        req.body, 
+        {new: true},
+        (error, updatedVape) => {
+            res.send(updatedVape);
+        }
+    );
+});
+
 // CREATE ROUTE
 
 app.post('/vapes', (req, res) => {
