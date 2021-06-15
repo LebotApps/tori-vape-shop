@@ -40,9 +40,9 @@ app.get('/', (req, res) => {
 
 // Index Route Vapes
 app.get('/vapes', (req, res) => {
-    Vape.find({}, (error, foundVapes) => {
-        res.send(foundVapes);
-    });
+    Vape.find({}, (error, allVapes) => {
+        res.render('./vapes/index.ejs', {vapes: allVapes});
+    })
 });
 
 //DELETE ROUTE
