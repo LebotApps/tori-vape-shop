@@ -65,6 +65,12 @@ app.put('/vapes/:id', (req, res) => {
     );
 });
 
+//NEW ROUTE
+
+app.get('/vapes/new', (req, res) => {
+    res.render('./vapes/new.ejs');
+});
+
 // CREATE ROUTE
 
 app.post('/vapes', (req, res) => {
