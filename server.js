@@ -45,6 +45,14 @@ app.get('/vapes', (req, res) => {
     });
 });
 
+//DELETE ROUTE
+
+app.delete('/vapes/:id', (req, res) =>{
+    Vape.findByIdAndDelete(req.params.id, (error, deletedVape)=>{
+        res.send({success: true});
+    });
+});
+
 // CREATE ROUTE
 
 app.post('/vapes', (req, res) => {
