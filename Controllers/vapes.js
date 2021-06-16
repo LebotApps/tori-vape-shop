@@ -1,25 +1,33 @@
-// Require Dependcies
+//Dependcies
+
 
 const express = require('express');
 const vapesRouter = express.Router();
-const vape = require('../models/vape');
+const Vape = require('../models/vape');
+
 
 
 //ROOT ROUTE
-vapesRouter.get('/', (req, res) => {
-  res.send("it's working");
-});
+// vapesRouter.get('/', (req, res) => {
+//   res.send("it's working");
+// });
 
 // Index Route Vapes
-vapesRouter.get('/vapes', (req, res) => {
+vapesRouter.get('/', (req, res) => {
   Vape.find({}, (error, allVapes) => {
       res.render('./vapes/index.ejs', {vapes: allVapes});
   })
 });
 
+//NEW ROUTE
+
+vapesRouter.get('/new', (req, res) => {
+  res.render('./vapes/new.ejs');
+});
+
 //DELETE ROUTE
 
-vapesRouter.delete('/vapes/:id', (req, res) =>{
+vapesRouter.delete('/:id', (req, res) =>{
   Vape.findByIdAndDelete(req.params.id, (error, deletedVape)=>{
       res.send({success: true});
   });
@@ -27,7 +35,7 @@ vapesRouter.delete('/vapes/:id', (req, res) =>{
 
 //UPDATE ROUTE
 
-vapesRouter.put('/vapes/:id', (req, res) => {
+vapesRouter.put('/:id', (req, res) => {
   Vape.findByIdAndUpdate( req.params.id, 
       req.body, 
       {new: true},
@@ -37,15 +45,9 @@ vapesRouter.put('/vapes/:id', (req, res) => {
   );
 });
 
-//NEW ROUTE
-
-vapesRouter.get('/vapes/new', (req, res) => {
-  res.render('./vapes/new.ejs');
-});
-
 // CREATE ROUTE
 
-vapesRouter.post('/vapes', (req, res) => {
+vapesRouter.post('/', (req, res) => {
  Vape.create(req.body, (error, createdVape) => {
      console.log(error, createdVape);
       res.redirect('/vapes');
@@ -54,12 +56,12 @@ vapesRouter.post('/vapes', (req, res) => {
 
 // SHOW ROUTE 
 
-vapesRouter.get("/vapes/:id", (req, res)=> {
+vapesRouter.get('/:id', (req, res)=> {
   Vape.findById(req.params.id, (error, foundVape)=>{
       res.send(foundVape);
   });
 });
 
-//Export 
+// Export
 
 module.exports = vapesRouter;
