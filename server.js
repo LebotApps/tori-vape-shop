@@ -6,6 +6,7 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const vape = require('./models/vape');
+const juices = require('./models/juices');
 
 
 //Middleware
@@ -78,6 +79,7 @@ app.get('/vapes/new', (req, res) => {
 
 app.post('/vapes', (req, res) => {
    Vape.create(req.body, (error, createdVape) => {
+       console.log(error, createdVape);
         res.redirect('/vapes');
     })
 })
