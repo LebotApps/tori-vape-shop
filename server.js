@@ -4,6 +4,8 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+const vape = require('./models/vape');
 
 
 //Middleware
@@ -13,6 +15,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+app.use(methodOverride('_method'));
 
 //Database Connection
 mongoose.connect(process.env.DATABASE_URL, {
@@ -74,10 +77,10 @@ app.get('/vapes/new', (req, res) => {
 // CREATE ROUTE
 
 app.post('/vapes', (req, res) => {
-    Vape.create(req.body, function(error, newVape) {
-        res.send(newVape);
+   Vape.create(req.body, (error, createdVape) => {
+        res.redirect('/vapes');
     })
-});
+})
 
 // SHOW ROUTE 
 
