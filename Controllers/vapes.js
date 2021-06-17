@@ -33,6 +33,12 @@ vapeRouter.delete('/:id', (req, res) => {
 
 // Vape Update Route
 
+vapeRouter.put('/:id', (req, res) => {
+  Vape.findByIdAndUpdate(req.params.id, req.body, { new: true}, (err, updatedVape) => {
+    res.redirect(`/vapes/${req.params.id}`);
+  });
+});
+
 // Vape Create Route
 
 vapeRouter.post('/', (req, res) => {

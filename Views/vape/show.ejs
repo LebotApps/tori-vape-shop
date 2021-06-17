@@ -14,10 +14,17 @@
         <li>
           <a href="/">Home</a>
         </li>
+        </ul>
+        <ul>
         <li>
-          <a href="/vapes">Vape Index</a>
+          Description: <%= vape.description %> <br>
+          Flavor: <%= vape.flavor %> <br>
         </li>
-      </ul>
+      
+       
+          <a href="/vapes">Vape Index</a>
+        
+     
     </nav>
   </header>
   <a href="/vapes/<%= vape._id %>/edit">Edit Vape</a>
