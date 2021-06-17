@@ -30,6 +30,14 @@ sheshaRouter.delete('/:id', (req, res) => {
   });
 });
 
+// Shesha Update Route 
+
+sheshaRouter.put('/:id', (req, res) => {
+  Shesha.findByIdAndUpdate(req.params.id, req.body, { new: true}, (err, updatedShesha) => {
+    res.redirect(`/sheshas/${req.params.id}`);
+  });
+});
+
 //Shesha Create Route
 
 sheshaRouter.post('/', (req, res) => {
