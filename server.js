@@ -1,7 +1,8 @@
+require('dotenv').config();
+
 //Dependencies
 const express = require('express');
 const port = process.env.PORT || 3000;
-
 
 // Initialize Express
 const app = express();
@@ -9,6 +10,23 @@ const app = express();
 // Set default view engine
 app.set('view engine', 'ejs');
 app.set('views', './views')
+
+//Database Mongoose
+const mongoose = require('mongoose');
+const db = mongoose.connection;
+
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+});
+
+// Mongoose Connection Error / Success
+
+db.on('connected', () => console.log('mongo connected'));
+db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
+db.on('disconnected', () => console.log('mongo disconnected'));
 
 // Home Route
 app.get('/',(req, res) => res.render('index'));
