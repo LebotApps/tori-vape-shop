@@ -10,12 +10,12 @@
     <h1>Vape Inventory</h1>
 
     <nav>
-        <a href="/vapes">Vapes</a>
+        <a href="/">Home</a>
     </nav>
         
     <main>
         <% vapes.forEach(vape => { %>
-            <%= vape.name %>
+           <a href="/vapes/<%= vape._id %>"> <%= vape.name %>
         <% }) %>
     </main>
 
