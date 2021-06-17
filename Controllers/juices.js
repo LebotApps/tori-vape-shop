@@ -1,6 +1,6 @@
 // Dependencies
 
-const Juicerouter = require('express').Router();
+const juiceRouter = require('express').Router();
 
 // Define routes/controllers
 
@@ -8,17 +8,17 @@ const Juicerouter = require('express').Router();
 
 //Juice Index Route 
 
-Juicerouter.get('/', (req, res) => {
+juiceRouter.get('/', (req, res) => {
   res.render('juice/index');
 });
 
 // Juice New Index Route 
 
-Juicerouter.get('/new', (req, res) => {
+juiceRouter.get('/new', (req, res) => {
   res.render('juice/new');
 });
 
 
 // Exports
 
-module.exports = Juicerouter;
+module.exports = juiceRouter;

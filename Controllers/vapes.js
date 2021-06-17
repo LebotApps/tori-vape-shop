@@ -1,6 +1,6 @@
 // Dependencies
 
-const Vaperouter = require('express').Router();
+const vapeRouter = require('express').Router();
 
 // Define routes/controllers
 
@@ -8,17 +8,26 @@ const Vaperouter = require('express').Router();
 
 //Vape Index Route 
 
-Vaperouter.get('/', (req, res) => {
+vapeRouter.get('/', (req, res) => {
   res.render('vapes/index');
 });
 
-// Vape New Index Route 
+// Vape New Route 
 
-Vaperouter.get('/new', (req, res) => {
+vapeRouter.get('/new', (req, res) => {
   res.render('vapes/new');
 });
+
+// Vape Create Route
+
+vapeRouter.post('/', (req, res) => {
+  Vape.create(req.body, (error, createdVape) => {
+      console.log(error, createdVape);
+       res.redirect('/vapes');
+   })
+ })
 
 
 // Exports
 
-module.exports = Vaperouter;
+module.exports = vapeRouter;
