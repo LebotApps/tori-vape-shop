@@ -39,6 +39,11 @@ juiceRouter.post('/', (req, res) => {
 
 // Juice Show Route
 
+juiceRouter.get('/:id', (req, res) => {
+  Juice.findById(req.params.id, (err, juice) => {
+    res.render('juice/show', { juice });
+  })
+});
 
 // Exports
 
