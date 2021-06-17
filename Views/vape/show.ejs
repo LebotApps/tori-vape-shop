@@ -4,20 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vape Shop</title>
+  <title>Show Page</title>
 </head>
 <body>
-  <h1>Welcome to the Vape Shop</h1>
-  
-  <main>
-    <h2>List of Vapes</h2>
-    <ul>
-        <% for(let i = 0; i < vapes.length; i++){ %>
+  <header>
+    <h1>Show Page for <%= vape.name %></h1>
+    <nav>
+      <ul>
         <li>
-            <a href="/vapes/<%= vapes[i]._id %>"><%= vapes[i].name %></a>
+          <a href="/">Home</a>
         </li>
-        <% } %>
-    </ul>
-</main>
+        <li>
+          <a href="/vapes">Vape Index</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
 </body>
 </html>

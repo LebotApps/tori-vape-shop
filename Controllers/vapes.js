@@ -39,6 +39,12 @@ vapeRouter.post('/', (req, res) => {
 
 // Vape Show Route
 
+vapeRouter.get('/:id', (req, res) => {
+  Vape.findById(req.params.id, (err, vape) => {
+    res.render('vape/show', { vape });
+  })
+});
+
 // Exports
 
 module.exports = vapeRouter;
