@@ -30,6 +30,14 @@ sheshaRouter.post('/', (req, res) => {
   });
 });
 
+// Shesha Show Route 
+
+sheshaRouter.get('/:id', (req, res) => {
+  Shesha.findById(req.params.id, (err, shesha) => {
+    res.render('shesha/show', { shesha });
+  })
+});
+
 // Exports
 
 module.exports = sheshaRouter;
