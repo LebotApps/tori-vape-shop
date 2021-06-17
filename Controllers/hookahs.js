@@ -44,6 +44,14 @@ hookahRouter.delete('/:id', (req, res) => {
 
 // Hookah Edit Route 
 
+hookahRouter.get('/:id/edit', (req, res) => {
+  Hookah.findById(req.params.id, (err, foundHookah) => {
+      res.render('hookah/edit', {
+          hookah: foundHookah
+      });
+  });
+});
+
 // Hookah Show Route
 
 hookahRouter.get('/:id', (req, res) => {
