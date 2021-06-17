@@ -1,22 +1,26 @@
 // Dependencies
 
 const vapeRouter = require('express').Router();
-const Vape = require('../models/vape.js');
+const Vape = require('../models/vape');
 
 // Define routes/controllers
 
 // We are mounting this controller on /vapes
 
-//vape Index Route 
+//Vape Index Route 
 
 vapeRouter.get('/', (req, res) => {
-  res.render('vape/index');
+
+  Vape.find({}, (err, vapes) => { 
+    res.render('vape/index', { vapes });
+  });
 });
+
 
 // vape New Route 
 
 vapeRouter.get('/new', (req, res) => {
-  res.render('vape/new');
+  res.render('vapes/new');
 });
 
 // Vape Delete Route

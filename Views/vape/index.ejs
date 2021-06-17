@@ -10,13 +10,14 @@
     <h1>Vape Inventory</h1>
 
     <nav>
-        <a href="/vapes/new">Add A New Vape</a>
+        <a href="/vapes">Vapes</a>
     </nav>
-
-    <nav>
-        <a href="/">Home</a><br>
-    </nav>
-  
+        
+    <main>
+        <% vapes.forEach(vape => { %>
+            <%= vape.name %>
+        <% }) %>
+    </main>
 
         </body>
         </html>

@@ -3,13 +3,15 @@ require('dotenv').config();
 //Dependencies
 const express = require('express');
 const port = process.env.PORT || 3000;
+vape ="";
+
 
 // Initialize Express
 const app = express();
 
 // Set default view engine
 app.set('view engine', 'ejs');
-app.set('views', './views')
+
 
 //Database Mongoose
 const mongoose = require('mongoose');

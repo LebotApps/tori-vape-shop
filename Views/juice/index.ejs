@@ -12,7 +12,19 @@
     <nav>
         <a href="/juices/new">Add A New Juice</a>
     </nav>
-
+        <main>
+            <main>
+                <h2>List of Juices</h2>
+                <ul>
+                    <% juices.forEach(juice => { %>
+                      <li>
+                        <a href="/juices/<%= juices[i]._id %>">
+                            <%= juice.name %>
+                    </li>
+                    <% } %>
+                </ul>
+            </main>
+        </main>
     <nav>
         <a href="/">Home</a><br>
     </nav>
