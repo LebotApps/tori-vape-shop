@@ -22,6 +22,14 @@ sheshaRouter.get('/new', (req, res) => {
   res.render('shesha/new');
 });
 
+// Shesha Delete Route 
+
+sheshaRouter.delete('/:id', (req, res) => {
+  Shesha.findByIdAndDelete(req.params.id, (err, removedShesha) => {
+    res.redirect('/sheshas')
+  });
+});
+
 //Shesha Create Route
 
 sheshaRouter.post('/', (req, res) => {
