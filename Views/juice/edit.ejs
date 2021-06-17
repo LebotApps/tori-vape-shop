@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= juice.name %></title>
+</head>
+<body>
+    <h1>Edit Juice</h1>
+
+    <nav>
+      <a href="/">Home</a><br>
+  </nav>
+
+        <form action="/juices/<%= juice._id %>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%= juice.name %>"/><br />
+        Description: <input type="text" name="description" value="<%= juice.description %>"/><br />
+        Flavor: <input type="text" name="flavor" value="<%= juice.flavor %>"/><br />
+        Price: <input type="number" name="price" value="<%= juice.price %>"/><br />
+        Qty: <input type="number" name="qty" value="<%= juice.qty %>"/><br />
+        <input type="submit" name="" value="Update Juices" />
+        </form>
+
+        <nav>
+            <a href="/juices">Back To Juices</a>
+        </nav>
+
+
+</body>
+</html>

@@ -43,6 +43,14 @@ juiceRouter.post('/', (req, res) => {
 
 // Juice Edit Route 
 
+juiceRouter.get('/:id/edit', (req, res) => {
+  Juice.findById(req.params.id, (err, foundJuice) => {
+      res.render('juice/edit', {
+          juice: foundJuice
+      });
+  });
+});
+
 // Juice Show Route
 
 juiceRouter.get('/:id', (req, res) => {
