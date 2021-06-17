@@ -43,6 +43,14 @@ vapeRouter.post('/', (req, res) => {
 
 // Vape Edit Route 
 
+vapeRouter.get('/:id/edit', (req, res) => {
+  Vape.findById(req.params.id, (err, foundVape) => {
+      res.render('vape/edit.ejs', {
+          vape: foundVape
+      });
+  });
+});
+
 // Vape Show Route
 
 vapeRouter.get('/:id', (req, res) => {
