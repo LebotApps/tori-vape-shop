@@ -25,6 +25,12 @@ vapeRouter.get('/new', (req, res) => {
 
 // Vape Delete Route
 
+vapeRouter.delete('/:id', (req, res) => {
+  Vape.findByIdAndDelete(req.params.id, (err, removedVape) => {
+    res.redirect('/vapes')
+  });
+});
+
 // Vape Update Route
 
 // Vape Create Route
