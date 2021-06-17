@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= shesha.name %></title>
+</head>
+<body>
+    <h1>Edit Shesha</h1>
+
+    <nav>
+      <a href="/">Home</a><br>
+  </nav>
+
+        <form action="/sheshas/<%= shesha._id %>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%= shesha.name %>"/><br />
+        Description: <input type="text" name="description" value="<%= shesha.description %>"/><br />
+        Flavor: <input type="text" name="flavor" value="<%= shesha.flavor %>"/><br />
+        Price: <input type="number" name="price" value="<%= shesha.price %>"/><br />
+        Qty: <input type="number" name="qty" value="<%= shesha.qty %>"/><br />
+        <input type="submit" name="" value="Update Shesha" />
+        </form>
+
+        <nav>
+            <a href="/sheshas">Back To Shesha</a>
+        </nav>
+
+
+</body>
+</html>

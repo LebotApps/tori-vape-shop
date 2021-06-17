@@ -38,6 +38,16 @@ sheshaRouter.post('/', (req, res) => {
   });
 });
 
+// Shesha Edit Route 
+
+sheshaRouter.get('/:id/edit', (req, res) => {
+  Shesha.findById(req.params.id, (err, foundShesha) => {
+      res.render('shesha/edit', {
+          shesha: foundShesha
+      });
+  });
+});
+
 // Shesha Show Route 
 
 sheshaRouter.get('/:id', (req, res) => {
