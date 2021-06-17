@@ -32,6 +32,12 @@ hookahRouter.delete('/:id', (req, res) => {
 
 // Hookah Update Route
 
+hookahRouter.put('/:id', (req, res) => {
+  Hookah.findByIdAndUpdate(req.params.id, req.body, { new: true}, (err, updatedHookah) => {
+    res.redirect(`/hookahs/${req.params.id}`);
+  });
+});
+
 // Hookah Create Route
 
   hookahRouter.post('/', (req, res) => {
@@ -39,8 +45,6 @@ hookahRouter.delete('/:id', (req, res) => {
     res.redirect('/hookahs');
   });
 });
-
-
 
 // Hookah Edit Route 
 
