@@ -20,6 +20,9 @@
       </ul>
     </nav>
   </header>
-
+  <a href="/hookahs/<%= hookah._id %>/edit">Edit Hookah</a>
+  <form action="/hookahs/<%= hookah._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE" />
+  </form>
 </body>
 </html>
