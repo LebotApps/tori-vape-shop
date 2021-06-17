@@ -1,6 +1,7 @@
 // Dependencies
 
 const sheshaRouter = require('express').Router();
+const Shesha = require('../models/shesha.js');
 
 // Define routes/controllers
 
@@ -18,6 +19,13 @@ sheshaRouter.get('/new', (req, res) => {
   res.render('shesha/new');
 });
 
+//Shesha Create Route
+
+sheshaRouter.post('/', (req, res) => {
+  Shesha.create(req.body, (err, createdShesha) => {
+    res.redirect('/sheshas');
+  });
+});
 
 // Exports
 
