@@ -24,6 +24,12 @@ juiceRouter.get('/new', (req, res) => {
 
 // Juice Delete Route
 
+juiceRouter.delete('/:id', (req, res) => {
+  Juice.findByIdAndDelete(req.params.id, (err, removedJuice) => {
+    res.redirect('/juices')
+  });
+});
+
 // Juice Update Route
 
 // Juice Create Route
