@@ -10,7 +10,10 @@ const Hookah = require('../models/hookah');
 //Hookah Index Route  
 
 hookahRouter.get('/', (req, res) => {
-  res.render('hookah/index');
+
+  Hookah.find({}, (err, hookahs) => { 
+    res.render('hookah/index', { hookahs });
+  });
 });
 
 // Hookah New Route 
@@ -37,6 +40,11 @@ hookahRouter.get('/new', (req, res) => {
 
 // Hookah Show Route
 
+hookahRouter.get('/:id', (req, res) => {
+  Hookah.findById(req.params.id, (err, hookah) => {
+    res.render('hookah/show', { hookah });
+  })
+});
 
 // Exports
 

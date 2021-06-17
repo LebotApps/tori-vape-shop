@@ -11,7 +11,11 @@
     <nav>
         <a href="/hookahs/new">Add A Hookah</a>
     </nav>
-
+    <main>
+        <% hookahs.forEach(hookah => { %>
+           <a href="/hookahs/<%= hookah._id %>"> <%= hookah.name %>
+        <% }) %>
+    </main>
     <nav>
         <a href="/">Home</a><br>
     </nav>
