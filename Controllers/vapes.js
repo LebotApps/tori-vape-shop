@@ -20,7 +20,7 @@ vapeRouter.get('/', (req, res) => {
 // vape New Route 
 
 vapeRouter.get('/new', (req, res) => {
-  res.render('vapes/new');
+  res.render('vape/new');
 });
 
 // Vape Delete Route

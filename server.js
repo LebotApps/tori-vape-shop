@@ -3,7 +3,8 @@ require('dotenv').config();
 //Dependencies
 const express = require('express');
 const port = process.env.PORT || 3000;
-vape ="";
+const methodOverride = require('method-override');
+// vape ="";
 
 
 // Initialize Express
@@ -33,6 +34,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Middleware
 
 app.use(express.urlencoded({ extended: false}));
+app.use(methodOverride('_method'));
 
 // Home Route
 app.get('/',(req, res) => res.render('index'));
