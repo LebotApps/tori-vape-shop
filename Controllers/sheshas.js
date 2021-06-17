@@ -10,7 +10,10 @@ const Shesha = require('../models/shesha.js');
 //Shesha Index Route 
 
 sheshaRouter.get('/', (req, res) => {
-  res.render('shesha/index');
+
+  Shesha.find({}, (err, sheshas) => { 
+    res.render('shesha/index', { sheshas });
+  });
 });
 
 // Shesha New Route 

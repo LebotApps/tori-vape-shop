@@ -13,6 +13,12 @@
         <a href="/sheshas/new">Add A New Shesha</a>
     </nav>
 
+    <main>
+        <% sheshas.forEach(shesha => { %>
+           <a href="/sheshas/<%= shesha._id %>"> <%= shesha.name %>
+        <% }) %>
+    </main>
+
     <nav>
         <a href="/">Home</a><br>
     </nav>
