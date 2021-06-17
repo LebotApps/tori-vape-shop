@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const vapeSchema = new Schema({
+const hookahSchema = new Schema({
     name: {type: String, required: true},
     description: {type: String, required: true},
-    flavor: {type: String, required: true},
     price: {type: Number, required: true}
 });
 
-const Vape = mongoose.model('Vape', vapeSchema);
+const Hookah = mongoose.model('Vape', hookahSchema);
 
-module.exports = Vape;
+module.exports = Hookah;
