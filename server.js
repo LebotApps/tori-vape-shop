@@ -28,6 +28,10 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
+// Middleware
+
+app.use(express.urlencoded({ extended: false}));
+
 // Home Route
 app.get('/',(req, res) => res.render('index'));
 

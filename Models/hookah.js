@@ -7,6 +7,6 @@ const hookahSchema = new Schema({
     price: {type: Number, required: true}
 });
 
-const Hookah = mongoose.model('Vape', hookahSchema);
+const Hookah = mongoose.model('Hookah', hookahSchema);
 
 module.exports = Hookah;

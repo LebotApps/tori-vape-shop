@@ -1,6 +1,7 @@
 // Dependencies
 
 const vapeRouter = require('express').Router();
+const Vape = require('../models/vape');
 
 // Define routes/controllers
 
@@ -18,14 +19,24 @@ vapeRouter.get('/new', (req, res) => {
   res.render('vapes/new');
 });
 
+ // Vape Delete Route
+
+// Vape Update Route
+
+
 // Vape Create Route
 
 vapeRouter.post('/', (req, res) => {
-  Vape.create(req.body, (error, createdVape) => {
-      console.log(error, createdVape);
-       res.redirect('/vapes');
-   })
- })
+  Vape.create(req.body, (err, createdVape) => {
+    res.redirect('/vapes');
+  });
+});
+
+
+// Vape Edit Route 
+
+// Vape Show Route
+
 
 
 // Exports

@@ -1,6 +1,7 @@
 // Dependencies
 
 const juiceRouter = require('express').Router();
+const Juice = require('../models/juice.js');
 
 // Define routes/controllers
 
@@ -12,11 +13,28 @@ juiceRouter.get('/', (req, res) => {
   res.render('juice/index');
 });
 
-// Juice New Index Route 
+// Juice New Route 
 
 juiceRouter.get('/new', (req, res) => {
   res.render('juice/new');
 });
+
+// Juice Delete Route
+
+// Juice Update Route
+
+// Juice Create Route
+
+juiceRouter.post('/', (req, res) => {
+  Juice.create(req.body, (err, createdJuice) => {
+    res.redirect('/juices');
+  });
+});
+
+
+// Juice Edit Route 
+
+// Juice Show Route
 
 
 // Exports
