@@ -10,7 +10,10 @@ const Juice = require('../models/juice.js');
 //Juice Index Route 
 
 juiceRouter.get('/', (req, res) => {
-  res.render('juice/index');
+
+  Juice.find({}, (err, juices) => { 
+    res.render('juice/index', { juices });
+  });
 });
 
 // Juice New Route 
