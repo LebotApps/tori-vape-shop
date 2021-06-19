@@ -11,11 +11,11 @@
         <a href="/vapes/new">Add A Vape</a>
     </nav>
         
-    <main>
+    <div>
         <% vapes.forEach(vape => { %>
            <a href="/vapes/<%= vape._id %>"> <%= vape.name %>
         <% }) %>
-    </main>
+           </div>
 
         </body>
         </html>
