@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const sheshaSchema = new Schema({
     name: {type: String, required: true},
-    nicotine: {type: String, required: true},
     flavor: {type: String, required: true},
     price: {type: Number, required: true},
     img: {type: String, required: true}
