@@ -3,6 +3,7 @@
 const vapeRouter = require('express').Router();
 const Vape = require('../models/vape');
 
+
 // Define routes/controllers
 
 // We are mounting this controller on /vapes

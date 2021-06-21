@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
+
 const vapeSchema = new Schema({
-    name: {type: String, required: true},
-    description: {type: String, required: true},
-    flavor: {type: String, required: true},
-    price: {type: Number, required: true}
-});
+    name: String,
+    description: String,
+    flavor: String,
+    price: Number,
+    img: String,
+    },
+{ timestamps: true});
 
 const Vape = mongoose.model('Vape', vapeSchema);
 
