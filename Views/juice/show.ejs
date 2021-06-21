@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include(`../partials/head.ejs`);%>
+
+  <title>Show Juice</title>
 <body>
-  <header>
-    <h1>Show Page for <%= juice.name %></h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/juices">Juice Index</a>
-        </li>
-      </ul>
-      
-          Description: <%= juice.description %> 
-        
-          Flavor: <%= juice.flavor %> 
-        
-    </nav>
-  </header>
-  <a href="/juices/<%= juice._id %>/edit">Edit Juice</a>
+
+  <nav>
+    <ul  class="navLinks2">
+    <li><a href="/">Home</a></li>
+  
+    <li><a href="/juices">Back To Juices</a></li>
+  </ul>
+  </nav>
+
+  <div>
+    <h1><strong class="showTitle"> <%= juice.name %></strong></h1>
+  </div>
+
+        <div class="showPage">
+         <strong>Nicotine:</strong><%= juice.Nicotine %> <br>
+          <strong>Flavor:</strong> <%= juice.flavor %> <br>
+        </strong>Price:</strong>$ <%= juice.price %> <br class="img2">
+        </div>
+
+        <img src= <%= juice.img %> class="img2">
+
+  <div>
+  <a href="/juices/<%= juice._id %>/edit" class="card4">Edit Juice</a>
   <form action="/juices/<%= juice._id %>?_method=DELETE" method="POST">
-    <input type="submit" value="DELETE" />
+    <input type="submit" value="DELETE" class= "card4"/>
   </form>
+</div>
+
 </body>
 </html>
