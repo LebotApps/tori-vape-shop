@@ -14,12 +14,18 @@
     <li class="side-menu-li"><a href="/vapes/new"><strong>Add A Vape</a></li></strong>
     </ul>
 
-    <h1 class="vapeProLabel">Products</h1>
+    <h1 class="vapeProLabel">Vapes</h1>
 
-        <h2 class="card2"><% vapes.forEach(vape => { %>
-           <a href="/vapes/<%= vape._id %>" class="data"> <%= vape.name %>
+        <ul>
+        <% vapes.forEach(vape => { %>
+           <a href="/vapes/<%= vape._id %>">
+            
+            <li class="card2">
+            <%= vape.name %> 
+            
         <% }) %>
-    </h2>
+    </li> 
+    </ul>
        
         </body>
         </html>
