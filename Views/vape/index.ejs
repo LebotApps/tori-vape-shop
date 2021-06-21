@@ -7,17 +7,17 @@
     </div>
 
     <ul>
-    <li class="side-menu-li"><a href="/">Home</a></li>
-    <li class="side-menu-li"><a href="/juices">Juices</a></li>
-    <li class="side-menu-li"><a href="/hookahs">Hookahs</a></li>
-    <li class="side-menu-li"><a href="/shesha">Shesha</a></li>
-    <li class="side-menu-li"><a href="/vapes/new">Add A Vape</a></li>
+    <li class="side-menu-li"><a href="/"><strong>Home</a></li></strong>
+    <li class="side-menu-li"><a href="/juices"><strong>Juices</a></li></strong>
+    <li class="side-menu-li"><a href="/hookahs"><strong>Hookahs</a></li></strong>
+    <li class="side-menu-li"><a href="/shesha"><strong>Shesha</a></li></strong>
+    <li class="side-menu-li"><a href="/vapes/new"><strong>Add A Vape</a></li></strong>
     </ul>
 
     <h1 class="vapeProLabel">Products</h1>
 
         <h2 class="card2"><% vapes.forEach(vape => { %>
-           <a href="/vapes/<%= vape._id %>"> <%= vape.name %>
+           <a href="/vapes/<%= vape._id %>" class="data"> <%= vape.name %>
         <% }) %>
     </h2>
        
