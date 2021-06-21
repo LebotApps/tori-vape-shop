@@ -9,12 +9,12 @@
     <ul  class="navLinks2">
     <li><a href="/">Home</a></li>
   
-    <li><a href="/sheshas">Back To Sheshas</a></li>
+    <li><a href="/sheshas">Back To Shesha</a></li>
   </ul>
   </nav>
 
   <div>
-    <h1><strong <%= shesha.name %>   </h1></strong>
+    <h1><strong class="showTitle"> <%= shesha.name %></strong></h1>
   </div>
 
         <div class="showPage">
@@ -23,11 +23,11 @@
         </strong>Price:</strong>$ <%= shesha.price %> <br class="img2">
         </div>
 
-        <img src= <%= shesha.img %>/ class="img3">
+        <img src= <%= shesha.img %> class="img4">
 
   <div>
   <a href="/sheshas/<%= shesha._id %>/edit" class="card4">Edit Shesha</a>
-  <form action="/sheshas<%= shesha._id %>?_method=DELETE" method="POST">
+  <form action="/sheshas/<%= shesha._id %>?_method=DELETE" method="POST">
     <input type="submit" value="DELETE" class= "card4"/>
   </form>
 </div>
