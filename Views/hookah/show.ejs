@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include(`../partials/head.ejs`);%>
+
+  <title>Show Hookah</title>
 <body>
-  <header>
-    <div>
-    <h1>Show Page for <%= hookah.name %></h1>
+
+  <nav>
+    <ul  class="navLinks2">
+    <li><a href="/">Home</a></li>
+  
+    <li><a href="/hookahs">Back To Hookahs</a></li>
+  </ul>
+  </nav>
+
+  <div>
+    <h1><strong class="shortTitle"> <%= hookah.name %></strong></h1>
   </div>
-    <main>
-      <h2><%= hookah.description %></h2>
-      <%= hookah.flavor %> <br>
-      <%= hookah.price %>
-    </main>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/hookahs">Hookah Index</a>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          Description: <%= hookah.description %> <br>
-          Flavor: <%= hookah.flavor %> <br>
-        </li>
-        </ul>
-    </nav>
-  </header>
-  <a href="/hookahs/<%= hookah._id %>/edit">Edit Hookah</a>
+
+        <div class="showPage">
+         <strong>Description:</strong><%= hookah.description %> <br>
+        </strong>Price:</strong>$ <%= hookah.price %> <br>
+        </div>
+
+        <img src= <%= hookah.img %> class="img2">
+
+  <div>
+  <a href="/hookahs/<%= hookah._id %>/edit" class="card4">Edit Hookah</a>
   <form action="/hookahs/<%= hookah._id %>?_method=DELETE" method="POST">
-    <input type="submit" value="DELETE" />
+    <input type="submit" value="DELETE" class= "card4"/>
   </form>
+</div>
+
 </body>
 </html>

@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include(`../partials/head.ejs`);%>
+    <%- include(`../partials/head.ejs`);%>
+
+    <title>Edit Hookhah</title>
+
 <body>
-    <h1>Edit Hookah</h1>
+    <h1 class="titleInv">Edit Hookah</h1>
 
-    <nav>
-      <a href="/">Home</a><br>
-  </nav>
-
-        <form action="/hookahs/<%= hookah._id %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%= hookah.name %>"/><br />
-        Description: <input type="text" name="description" value="<%= hookah.description %>"/><br />
-        Flavor: <input type="text" name="flavor" value="<%= hookah.flavor %>"/><br />
-        Price: <input type="number" name="price" value="<%= hookah.price %>"/><br />
-        Qty: <input type="number" name="qty" value="<%= hookah.qty %>"/><br />
-        <input type="submit" name="" value="Update Hookahs" />
+        <div class="newProduct">
+        <form action="/hookahs" method="POST">
+        Name: <input type="text" name="name" class="priMarg"><br />
+        Description: <input type="text" name="description" class="priMarg"><br />
+        Flavor: <input type="text" name="flavor" class="priMarg"><br />
+        Price: <input type="number" name="price" class="priMarg"><br />
+        <input type="submit" name="" value="Edit Hookah" class="btn"/><br>
+        <input type="submit" value="DELETE" class= "btn"/>
         </form>
+        </div>
 
-        <nav>
+        <nav class="card3">
             <a href="/hookahs">Back To Hookahs</a>
+        </nav>
+        <nav class="card3">
+            <a href="/">Home</a>
         </nav>
 
 

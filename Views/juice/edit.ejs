@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include(`../partials/head.ejs`);%>
+    <%- include(`../partials/head.ejs`);%>
+
+    <title>Edit Juice</title>
+
 <body>
-    <h1>Edit Juice</h1>
+    <h1 class="titleInv">Edit Juice</h1>
 
-    <nav>
-      <a href="/">Home</a><br>
-  </nav>
-
-        <form action="/juices/<%= juice._id %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%= juice.name %>"/><br />
-        Description: <input type="text" name="description" value="<%= juice.description %>"/><br />
-        Flavor: <input type="text" name="flavor" value="<%= juice.flavor %>"/><br />
-        Price: <input type="number" name="price" value="<%= juice.price %>"/><br />
-        Qty: <input type="number" name="qty" value="<%= juice.qty %>"/><br />
-        <input type="submit" name="" value="Update Juices" />
+        <div class="newProduct">
+        <form action="/juices" method="POST">
+        Name: <input type="text" name="name" selected class="priMarg"><br />
+        
+        Flavor: <input type="text" name="flavor" class="priMarg"><br />
+        Price: <input type="number" name="price" class="priMarg"><br />
+        <input type="submit" name="" value="Edit Juice" class="btn"/><br>
+        <input type="submit" value="DELETE" class= "btn"/>
         </form>
+        </div>
 
-        <nav>
+        <nav class="card2">
             <a href="/juices">Back To Juices</a>
+        </nav>
+        <nav class="card2">
+            <a href="/">Home</a>
         </nav>
 
 
