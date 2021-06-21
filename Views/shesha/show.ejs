@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include(`../partials/head.ejs`);%>
+
+  <title>Show Shesha</title>
 <body>
-  <header>
-    <h1>Show Page for <%= shesha.name %></h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/sheshas">Shesha Index</a>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          Description: <%= shesha.description %> <br>
-          Flavor: <%= shesha.flavor %> <br>
-        </li>
-        </ul>
-    </nav>
-  </header>
-  <a href="/sheshas/<%= shesha._id %>/edit">Edit Shesha</a>
-  <form action="/sheshas/<%= shesha._id %>?_method=DELETE" method="POST">
-    <input type="submit" value="DELETE" />
+
+  <nav>
+    <ul  class="navLinks2">
+    <li><a href="/">Home</a></li>
+  
+    <li><a href="/sheshas">Back To Sheshas</a></li>
+  </ul>
+  </nav>
+
+  <div>
+    <h1><strong <%= shesha.name %>   </h1></strong>
+  </div>
+
+        <div class="showPage">
+         <strong>Description:</strong><%= shesha.description %> <br>
+          <strong>Flavor:</strong> <%= shesha.flavor %> <br>
+        </strong>Price:</strong>$ <%= shesha.price %> <br class="img2">
+        </div>
+
+        <img src= <%= shesha.img %>/ class="img3">
+
+  <div>
+  <a href="/sheshas/<%= shesha._id %>/edit" class="card4">Edit Shesha</a>
+  <form action="/sheshas<%= shesha._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE" class= "card4"/>
   </form>
+</div>
+
 </body>
 </html>
