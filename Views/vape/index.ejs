@@ -2,20 +2,24 @@
 <html lang="en">
     <%- include(`../partials/head.ejs`);%>
 <body>
-    <h1>Vape Inventory</h1>
+    <div class="titleBox">
+    <h1 class="proTitle"><strong>Vape Inventory</h1></strong>
+    </div>
 
-    <nav>
-        <a href="/">Home</a>
-    </nav>
-    <nav>
-        <a href="/vapes/new">Add A Vape</a>
-    </nav>
-        
-    <div>
-        <% vapes.forEach(vape => { %>
+    <ul>
+    <li class="side-menu-li"><a href="/">Home</a></li>
+    <li class="side-menu-li"><a href="/juices">Juices</a></li>
+    <li class="side-menu-li"><a href="/hookahs">Hookahs</a></li>
+    <li class="side-menu-li"><a href="/shesha">Shesha</a></li>
+    <li class="side-menu-li"><a href="/vapes/new">Add A Vape</a></li>
+    </ul>
+
+    <h1 class="vapeProLabel">Products</h1>
+
+        <h2 class="card2"><% vapes.forEach(vape => { %>
            <a href="/vapes/<%= vape._id %>"> <%= vape.name %>
         <% }) %>
-           </div>
-
+    </h2>
+       
         </body>
         </html>
